@@ -1,0 +1,44 @@
+.carousel-inner{
+    height: 500px;
+}
+
+.inner-carousel-item{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-details{
+    position: relative;
+    top: 50px;
+    left: 30px;
+    width: 50%;
+}
+
+.spotlight{
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.title{
+    font-weight: bolder;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.genres{
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.gen,.desc{
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.Desc{
+        text-align: justify;
+        text-justify: inter-word;
+    }
