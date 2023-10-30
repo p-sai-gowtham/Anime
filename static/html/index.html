@@ -6,15 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" type="image/x-icon" href="https://gogocdn.net/cover/tate-no-yuusha-no-nariagari-season-3-1698302959.png">
+    <link rel="icon" type="image/x-icon"
+        href="https://gogocdn.net/cover/tate-no-yuusha-no-nariagari-season-3-1698302959.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
-<body class="bg-dark " style="color: white;">
+<body class="bg-dark text-bg-dark" style="color: white;">
 
+    <!-- navbar -->
 
     <nav class="navbar navbar-dark navbar-expand-lg bg-body-dark sticky-top">
         <div class="container-fluid">
@@ -34,12 +36,14 @@
 
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="id">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
+
+    <!-- spotlight -->
 
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -56,18 +60,184 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+    </div>
+
+    <!-- topairing -->
+
+    <h2 class="m-5 px-5">Top-Airing</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4 topairing">
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content" data-i="1" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content " data-i="2" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content" data-i="3" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content" data-i="4" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content" data-i="5" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content" data-i="6" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content" data-i="7" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content" data-i="8" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content" data-i="9" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark topairing-content" data-i="10" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
 
 
 
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
-        <script type="module" src="{% static 'js/script.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script type="module" src="{% static 'js/script.js'%}"></script>
 </body>
 
 </html>
