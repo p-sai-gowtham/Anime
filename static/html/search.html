@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="bg-dark text-bg-dark" style="color: white;">
+
+    <!-- navbar -->
+
+    <nav class="navbar navbar-dark navbar-expand-lg bg-body-dark bg-black sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar scroll</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" action="/search" method="post">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="id">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <h2 class="m-5 px-5 name" data-id="{{id}}">Results: </h2>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4 result">
+
+        <div class="col">
+            <div class="card mb-3 bg-dark result-content cshadow" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark result-content cshadow " style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark result-content cshadow" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3 bg-dark result-content cshadow" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script type="module" src="{% static 'js/search.js'%}"></script>
+</body>
+
+</html>
