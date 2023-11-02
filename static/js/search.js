@@ -31,7 +31,7 @@ async function getData() {
         entries.forEach(async (entry) => {
             if (entry.isIntersecting && result.results.length) {
 
-                await createResult(results, result.results);
+                await creatingResults(results, result.results);
                 resultsObserver.unobserve(entry.target);
                 resultsObserver.observe(document.querySelector('.result-content:last-child'));
 
@@ -45,21 +45,46 @@ async function getData() {
         threshold: 0.1
     });
 
-    resultsObserver.observe(document.querySelector('.result-content:last-child'));
+    resultsObserver.observe(document.querySelector('.result'));
 
 }
 
 getData();
 
 async function creatingResults(div, data) {
+    const cards = [];
     if (data) {
         for (let i = 0; i < 4; i++) {
-            await div.removeChild(div.lastElementChild)
+            const col = document.createElement('div');
+            col.classList.add('col');
+            col.innerHTML = `<div class="card mb-3 bg-dark result-content cshadow" style="max-width: 540px;">
+                <div id="container-loader">
+                    <div id="square" class="shimmer"></div>
+                    <div id="content">
+                        <div id="content-title" class="shimmer"></div>
+                        <div id="content-desc">
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                            <div class="line shimmer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+            div.appendChild(col);
         }
         for (let i = 0; i < 4; i++) {
             if (data) {
-                await createResult(div, data);
+                cards.push(await createResult(data));
             }
         }
+        for (let i = 0; i < 4; i++) {
+            await div.removeChild(div.lastElementChild)
+        }
+        cards.forEach(card => {
+            if (card!=null) {
+                div.appendChild(card);
+            }
+        });
     }
 }
