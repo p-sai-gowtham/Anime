@@ -10,16 +10,13 @@ async function getData() {
     const response = await fetch(`https://api.consumet.org/anime/gogoanime/${id}?page=${i}`);
     const result = await response.json();
     var hasNext = result.hasNextPage;
-    console.log(result)
-
 
     if (result.results.length == 0) {
         results.innerHTML = `<h1 class="m-5 px-5">Sorry, no results found</h1>`;
         return;
     }
-    
 
-    while (hasNext && i<4) {
+    while (hasNext && i < 4) {
         i++;
         const response2 = await fetch(`https://api.consumet.org/anime/gogoanime/${id}?page=${i}`);
         const result2 = await response2.json();
@@ -27,22 +24,14 @@ async function getData() {
         hasNext = result2.hasNextPage;
     }
 
-
-    
-    results.innerHTML = ``;
-    var data = await createResult(results, result.results);
-
-
-    // console.log(result.results);
-    // console.log(data);
-
+    await creatingResults(results, result.results);
 
 
     const handleResultsIntersection = (entries, resultsObserver) => {
         entries.forEach(async (entry) => {
-            if (entry.isIntersecting && data.length) {
+            if (entry.isIntersecting && result.results.length) {
 
-                data = await createResult(results, data);
+                await createResult(results, result.results);
                 resultsObserver.unobserve(entry.target);
                 resultsObserver.observe(document.querySelector('.result-content:last-child'));
 
@@ -61,3 +50,16 @@ async function getData() {
 }
 
 getData();
+
+async function creatingResults(div, data) {
+    if (data) {
+        for (let i = 0; i < 4; i++) {
+            await div.removeChild(div.lastElementChild)
+        }
+        for (let i = 0; i < 4; i++) {
+            if (data) {
+                await createResult(div, data);
+            }
+        }
+    }
+}
