@@ -8,7 +8,7 @@ var i = 1;
 
 async function getData() {
     const response = await fetch(`https://api.consumet.org/anime/gogoanime/${id}?page=${i}`);
-    const result = await response.json();
+    var result = await response.json();
     var hasNext = result.hasNextPage;
 
     if (result.results.length == 0) {
@@ -23,6 +23,24 @@ async function getData() {
         result.results.push(...result2.results);
         hasNext = result2.hasNextPage;
     }
+
+    result.results.forEach((r) => {
+        const  a = r.id.split('-');
+        if (a[a.length - 1] === 'dub') {
+            var data = result.results.filter((f) => {
+
+                return r !== f;
+            });
+            result.results = data;
+            a.pop();
+            result.results.forEach((f) => {
+                if (f.id === a.join('-')) {
+                    f.subOrDub = 'sub & dub';
+                }
+            })
+        }
+    })
+    console.log(result.results);
 
     await creatingResults(results, result.results);
 
@@ -74,8 +92,9 @@ async function creatingResults(div, data) {
             div.appendChild(col);
         }
         for (let i = 0; i < 4; i++) {
-            if (data) {
-                cards.push(await createResult(data));
+            if (data[0] !== null) {
+                data[0].subOrDub === 'sub' ? cards.push(await createResult(data,'sub')) : cards.push(await createResult(data,'sub & dub'));
+                
             }
         }
         for (let i = 0; i < 4; i++) {

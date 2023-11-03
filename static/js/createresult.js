@@ -1,8 +1,9 @@
-export default async function createResult(data) {
+export default async function createResult(data, subOrDub) {
     if (data[0] != undefined) {
         const id = data[0].id;
         const url = `https://api.consumet.org/anime/gogoanime/info/${id}`;
-        const result = await getData(url);
+        var result = await getData(url);
+        result.subOrDub = subOrDub;
         const card = document.createElement('div');
         card.classList.add('card', 'mb-3', 'bg-dark', 'result-content');
         const rowDiv = document.createElement('div');
@@ -20,7 +21,7 @@ export default async function createResult(data) {
         const cardTitle = document.createElement('h5');
         cardTitle.classList.add('card-title');
         cardTitle.textContent = result.title;
-
+        
         const innerColDiv2 = document.createElement('div');
         innerColDiv2.classList.add('card-text');
         const otherName = document.createElement('h3');
@@ -34,7 +35,7 @@ export default async function createResult(data) {
         const details = document.createElement('p');
         details.classList.add('details');
         details.innerHTML = `${result.releaseDate} ${result.status} ${result.subOrDub}    `;
-
+        
         cardBody.appendChild(cardTitle);
         innerColDiv2.appendChild(otherName);
         innerColDiv2.appendChild(genres);
@@ -45,6 +46,7 @@ export default async function createResult(data) {
         rowDiv.appendChild(colDiv2);
         card.appendChild(rowDiv);
         data.shift();
+        data.push(null);
         return card;
     } else {
         return null;
