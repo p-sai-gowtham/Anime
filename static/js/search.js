@@ -40,8 +40,9 @@ async function getData() {
             })
         }
     })
-    console.log(result.results);
 
+    console.log(result.results);
+    
     await creatingResults(results, result.results);
 
 
