@@ -6,11 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" type="image/x-icon"
-        href="https://gogocdn.net/cover/tate-no-yuusha-no-nariagari-season-3-1698302959.png">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="https://gogocdn.net/cover/tate-no-yuusha-no-nariagari-season-3-1698302959.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/anime.css' %}">
 </head>
 
@@ -33,7 +30,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
-
                 </ul>
                 <form class="d-flex" role="search" action="/search" method="post">
                     {% csrf_token %}
@@ -50,22 +46,42 @@
 
         <div class="col-3 list my-4 ps-4 pe-0">
 
-            <div class="row  py-4 epi">
-                <h5 class="epis">Episode 1</h5>
+            <div class="row py-4 epi">
+                <h5 class="epis">
+                    Episode 1
+                </h5>
             </div>
-
 
         </div>
 
         <div class="col-9 p-0">
-            <iframe class="p-0" src="https://goone.pro/streaming.php?id=MTg0MTQx&title=Spy+x+Family+Episode+1" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0">
+            <iframe class="p-0 row" src="https://goone.pro/streaming.php?id=MTg0MTQx&title=Spy+x+Family+Episode+1" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0">
             </iframe>
+
+            <div class="row">
+                <div class="col-3 link">
+                    <a href="" class="Vidstreaming">Vidstreaming</a>
+                </div>
+                <div class="col-3 link">
+                    <a href="" class="Gogo-server">Gogo server</a>
+                </div>
+                <div class="col-3 link">
+                    <a href="" class="Streamwish">Streamwish</a>
+                </div>
+                <div class="col-3 link">
+                    <a href="" class="Mp4Upload">Mp4Upload</a>
+                </div>
+                <div class="col-3 link">
+                    <a href="" class="Doodstream">Doodstream</a>
+                </div>
+                <div class="col-3 link">
+                    <a href="" class="Filelions">Filelions</a>
+                </div>
+            </div>
+
         </div>
 
-
-
-
-
+    </div>
 
     <footer class="text-center text-lg-start">
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2020 Copyright: <span>P.SAI Gowtham</span>
@@ -76,9 +92,11 @@
 
 
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script type="module" src="{% static 'js/anime.js' %}"></script>
 </body>
 
 </html>
