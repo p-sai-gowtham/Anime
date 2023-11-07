@@ -5,5 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('search', views.search, name='search'),
-    path('anime', views.anime, name='anime'),
+    path('anime/<str:id>', views.anime, name='anime'),
 ]

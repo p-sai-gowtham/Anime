@@ -12,5 +12,5 @@ def search(request):
         return render(request, "search.html", {"id": query})
     else:
         return redirect("/")
-def anime(request):
-    return render(request, "anime.html")
+def anime(request,id=None):
+    return render(request, "anime.html" , {"id": id})

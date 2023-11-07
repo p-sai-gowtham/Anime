@@ -9,7 +9,7 @@ export default async function createCsl(innerCsl, id, act, i) {
     if (act) {
         div.classList.add('active');
     }
-
+    
     const details = document.createElement('div');
     const img = result.image
     const imgContainer =
@@ -30,7 +30,11 @@ export default async function createCsl(innerCsl, id, act, i) {
     detailContent += `<span class="badge bg-success">${result.subOrDub}</span>`;
     detailContent += `</div>`;
     detailContent += `<div><spam class="desc">Description: </spam>`;
-    detailContent += `<p class="Desc">${result.description}</p>`;
+    detailContent += `<p class="Desc">${result.description}</p>
+    <form action="/anime/${result.id}" method="GET">
+    <button class="btn btn-success btn-large" type="submit">Watch Now</button>
+    </form>
+    `;
     detailContent += `</div>`;
     details.innerHTML = detailContent;
     innerDiv.appendChild(details);
