@@ -6,12 +6,8 @@ async function getData() {
     const result = await response.json();
     const number = result.totalEpisodes;
     const list = document.querySelector('.list');
-    const epi = document.querySelectorAll('.epi');
-    const iframe = document.querySelector('iframe');
-    const link = document.querySelectorAll('.link');
     
-    
-    for(let i = 0; i < number; i++) {
+    for await (const i of Array(number).keys()) {
         list.innerHTML += `
         <div class="row py-4 epi">
         <h5 class="epis" data-epiId=${result.episodes[i].id}>
@@ -20,12 +16,18 @@ async function getData() {
         </div>
         `
     }
-    const Vidstreaming = await Epi('tate-no-yuusha-no-nariagari-season-3-episode-1');
-    iframe.src = Vidstreaming;
-
-
     
-    
+    Epi(result.episodes[0].id).then(() => {
+
+        const epis = document.querySelectorAll('.epis');
+
+        epis.forEach(i => {
+            i.addEventListener('click', async () => {
+                console.log(i);
+                await Epi(i.dataset.epiid);
+            })
+        })
+    });
 
 }
 

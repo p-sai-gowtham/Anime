@@ -31,7 +31,7 @@ export default async function createCsl(innerCsl, id, act, i) {
     detailContent += `</div>`;
     detailContent += `<div><spam class="desc">Description: </spam>`;
     detailContent += `<p class="Desc">${result.description}</p>
-    <form action="/anime/${result.id}" method="GET">
+    <form action="/anime/${result.id}" method="get">
     <button class="btn btn-success btn-large" type="submit">Watch Now</button>
     </form>
     `;
