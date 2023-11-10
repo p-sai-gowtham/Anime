@@ -43,6 +43,7 @@ async function getData() {
     const topairings = document.querySelectorAll('.topairing-content');
 
 
+    
     const handleTopairingIntersection = (entries, topairingObserver) => {
         entries.forEach(async (entry) => {
             if (entry.isIntersecting) {
@@ -52,6 +53,7 @@ async function getData() {
             }
         });
     }
+
 
     const topairingObserver = new IntersectionObserver(handleTopairingIntersection, {
         root: null,
