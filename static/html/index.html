@@ -14,7 +14,6 @@
 
 <body class="bg-dark text-bg-dark" style="color: white;">
 
-    <!-- navbar -->
 
     <nav class="navbar navbar-dark navbar-expand-lg bg-body-dark bg-black sticky-top">
         <div class="container-fluid">
@@ -33,6 +32,7 @@
                     </li>
 
                 </ul>
+    
                 <form class="d-flex" role="search" action="/search" method="post">
                     {% csrf_token %}
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="id">
